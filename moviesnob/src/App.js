@@ -24,13 +24,13 @@ class App extends Component {
     console.log('test')
     console.log('SEARCHED!', this.state.searchedItem)
     event.preventDefault();
-    this.getMovieData('test')
+    this.getMovieData(this.state.searchedItem)
   }
 
   getMovieData(movieTitle) {
     axios.get('http://www.omdbapi.com/?i=tt3896198&apikey=ea5a4616', {
       params: {
-        t: 'tenet'
+        t: movieTitle
       }
     })
     .then(function (response) {
