@@ -12,6 +12,7 @@ class App extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getMovieData = this.getMovieData.bind(this);
   }
 
 
@@ -23,6 +24,18 @@ class App extends Component {
     console.log('test')
     console.log('SEARCHED!', this.state.searchedItem)
     event.preventDefault();
+    this.getMovieData('test')
+  }
+
+  getMovieData(movieTitle) {
+    axios.get('http://www.omdbapi.com/?i=tt3896198&apikey=ea5a4616', {
+      params: {
+        t: 'tenet'
+      }
+    })
+    .then(function (response) {
+      console.log(response);
+    })
   }
 
 
