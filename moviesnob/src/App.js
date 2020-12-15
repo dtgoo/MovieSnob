@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import StagingCard from './components/stagingCard.jsx'
 import FavoritesList from './components/favoritesList.jsx'
+import DecisionData from './components/decision.jsx'
 
 class App extends Component {
 	constructor(props) {
@@ -36,7 +37,6 @@ class App extends Component {
       }
     })
     .then((response) => {
-    console.log('CurrentMovie', response.data)
     this.setState({
       currentMovie: response.data
     })
@@ -45,9 +45,10 @@ class App extends Component {
     )}
 
   addToFavorites(movieData) {
-    console.log('Rotten Tomatoes!: ', movieData.Ratings[1].Value)
+    // here you'll want to remove the percent sign and make an integer
+    let reviewNumber = parseInt(movieData.Ratings[1].Value, 10);
     let newArray = this.state.favoritesData.concat(movieData);
-    let reviewArray = this.state.reviewData.concat(movieData.Ratings[1].Value)
+    let reviewArray = this.state.reviewData.concat(reviewNumber)
     this.setState({
       favoritesData: newArray,
       reviewData: reviewArray
@@ -70,7 +71,8 @@ class App extends Component {
           <input type="submit" value="Submit" />
         </form>
        <StagingCard currentMovie={this.state.currentMovie} addToFavorites={this.addToFavorites}/>
-       <FavoritesList reviewData={this.state.reviewData} favoritesData={this.state.favoritesData}/>
+       <FavoritesList favoritesData={this.state.favoritesData}/>
+       <DecisionData reviewData={this.state.reviewData}/>
       </div>
     )}
 }
