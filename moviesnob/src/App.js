@@ -1,14 +1,16 @@
 import './App.css';
 import React, { Component } from 'react';
 import axios from 'axios';
+import StagingCard from './components/stagingCard.jsx'
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
       movieData: [],
-      movieAverage: 0,
-      searchedItem: ''
+      currentMovie: {},
+      searchedItem: '',
+      reviewData: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,8 +23,6 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    console.log('test')
-    console.log('SEARCHED!', this.state.searchedItem)
     event.preventDefault();
     this.getMovieData(this.state.searchedItem)
   }
@@ -33,10 +33,14 @@ class App extends Component {
         t: movieTitle
       }
     })
-    .then(function (response) {
-      console.log(response);
+    .then((response) => {
+    console.log('CurrentMovie', response.data)
+    this.setState({
+      currentMovie: response.data
     })
+
   }
+    )}
 
 
   render() {
@@ -52,6 +56,7 @@ class App extends Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
+       <StagingCard currentMovie={this.state.currentMovie}/>
       </div>
     )}
 }
