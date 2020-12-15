@@ -2,12 +2,13 @@ import './App.css';
 import React, { Component } from 'react';
 import axios from 'axios';
 import StagingCard from './components/stagingCard.jsx'
+import FavoritesList from './components/favoritesList.jsx'
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      movieData: [],
+      favoritesData: [],
       currentMovie: {},
       searchedItem: '',
       reviewData: []
@@ -15,6 +16,7 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getMovieData = this.getMovieData.bind(this);
+    this.addToFavorites = this.addToFavorites.bind(this);
   }
 
 
@@ -42,6 +44,17 @@ class App extends Component {
   }
     )}
 
+  addToFavorites(movieData) {
+    console.log('Rotten Tomatoes!: ', movieData.Ratings[1].Value)
+    let newArray = this.state.favoritesData.concat(movieData);
+    let reviewArray = this.state.reviewData.concat(movieData.Ratings[1].Value)
+    this.setState({
+      favoritesData: newArray,
+      reviewData: reviewArray
+
+    })
+  }
+
 
   render() {
     return(
@@ -56,7 +69,8 @@ class App extends Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-       <StagingCard currentMovie={this.state.currentMovie}/>
+       <StagingCard currentMovie={this.state.currentMovie} addToFavorites={this.addToFavorites}/>
+       <FavoritesList reviewData={this.state.reviewData} favoritesData={this.state.favoritesData}/>
       </div>
     )}
 }

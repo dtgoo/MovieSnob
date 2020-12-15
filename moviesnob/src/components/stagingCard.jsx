@@ -31,23 +31,21 @@ export default function StagingCard(props) {
         <CardMedia
           className={classes.media}
           image={`${props.currentMovie.Poster}`}
-          title="Contemplative Reptile"
+          title={`${props.currentMovie.Title}`}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.currentMovie.Title}
           </Typography>
+          <Typography>{props.currentMovie.Year}</Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {props.currentMovie.Plot}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={ () => props.addToFavorites(props.currentMovie)}>
           Add to your Favorites!
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
         </Button>
       </CardActions>
     </Card>
