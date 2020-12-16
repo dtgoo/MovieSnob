@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 
 export default function StagingCard(props) {
   const classes = useStyles();
-  if (props.currentMovie === undefined) {
+  if (props.currentMovie.Title === undefined) {
     return (
       <div>Waiting on call... </div>
     )

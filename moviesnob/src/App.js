@@ -71,8 +71,9 @@ class App extends Component {
           <input type="submit" value="Submit" />
         </form>
        <StagingCard currentMovie={this.state.currentMovie} addToFavorites={this.addToFavorites}/>
-       <FavoritesList favoritesData={this.state.favoritesData}/>
        <DecisionData reviewData={this.state.reviewData}/>
+       <FavoritesList favoritesData={this.state.favoritesData}/>
+
       </div>
     )}
 }
