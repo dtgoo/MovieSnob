@@ -59,20 +59,21 @@ class App extends Component {
 
   render() {
     return(
-      <div className="App">
-        <header>
+      <div className="App grid-container">
+        <header className="grid-item-1">
           MovieSnob
+          <img className="logo-img" src="https://freedomisgroovy.com/wp-content/uploads/2017/03/snob2.jpg"/>
         </header>
-        <form onSubmit={this.handleSubmit}>
+        <form className="grid-item-2" onSubmit={this.handleSubmit}>
           <label>
           Movie Title:
           <input type="text" onChange={this.handleChange}/>
           </label>
           <input type="submit" value="Submit" />
         </form>
-       <StagingCard currentMovie={this.state.currentMovie} addToFavorites={this.addToFavorites}/>
-       <DecisionData reviewData={this.state.reviewData}/>
-       <FavoritesList favoritesData={this.state.favoritesData}/>
+       <StagingCard className="grid-item-3" currentMovie={this.state.currentMovie} addToFavorites={this.addToFavorites}/>
+       <DecisionData className="grid-item-4" reviewData={this.state.reviewData}/>
+       <FavoritesList className="grid-item-5" favoritesData={this.state.favoritesData}/>
 
       </div>
     )}

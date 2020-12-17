@@ -7,17 +7,22 @@ import FavoritesItem from './favoritesItem.jsx'
 
 
 const breakPoints = [
-  // { width: 1, itemsToShow: 1 },
+  { width: 1, itemsToShow: 1 },
   // { width: 550, itemsToShow: 2 },
   // { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
+  // { width: 1200, itemsToShow: 4 },
 ];
 
 function favoritesList(props) {
-  console.log('this is the review array', props.favoritesData)
+
+  if (props.favoritesData.length < 4) {
+    <div>
+      add a few more movies to get your SnobScore!
+    </div>
+  }
+
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>Example to setup your carousel in react</h1>
       <div className="App">
         <Carousel breakPoints={breakPoints}>
           {
