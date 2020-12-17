@@ -15,15 +15,10 @@ const breakPoints = [
 
 function favoritesList(props) {
 
-  if (props.favoritesData.length < 4) {
-    <div>
-      add a few more movies to get your SnobScore!
-    </div>
-  }
-
   return (
     <>
       <div className="App">
+        <div>Here's your list of Favorites..</div>
         <Carousel breakPoints={breakPoints}>
           {
           props.favoritesData.map((movie, index) => (

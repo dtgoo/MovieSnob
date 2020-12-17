@@ -45,7 +45,7 @@ export default function StagingCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={ () => props.addToFavorites(props.currentMovie)}>
+        <Button size="large" color="primary" onClick={ () => props.addToFavorites(props.currentMovie)}>
           Add to your Favorites!
         </Button>
       </CardActions>
