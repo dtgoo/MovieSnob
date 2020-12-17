@@ -22,7 +22,7 @@ export default function StagingCard(props) {
   if (props.currentMovie.Title === undefined) {
     return (
       <div>Search for a movie up above!
-        <img className="theater-img" src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F11%2Famc-cinemark-theater-stock-surge-pfizer-covid19-vaccine-news3.jpg?q=75&w=800&cbr=1&fit=max"/>
+        <img alt="emptyTheater"className="theater-img" src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F11%2Famc-cinemark-theater-stock-surge-pfizer-covid19-vaccine-news3.jpg?q=75&w=800&cbr=1&fit=max"/>
       </div>
     )
   } else {

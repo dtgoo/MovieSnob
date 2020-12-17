@@ -62,7 +62,7 @@ class App extends Component {
       <div className="App grid-container">
         <header className="grid-item-1">
           MovieSnob
-          <img className="logo-img" src="https://freedomisgroovy.com/wp-content/uploads/2017/03/snob2.jpg"/>
+          <img alt="logo"className="logo-img" src="https://freedomisgroovy.com/wp-content/uploads/2017/03/snob2.jpg"/>
         </header>
         <form className="grid-item-2" onSubmit={this.handleSubmit}>
           <label>

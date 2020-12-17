@@ -43,6 +43,9 @@ body {
   max-width: 60px;
 }
 
+.decision-score {
+  font-weight: bold;
+}
 
 .grid-item-1 {
   grid-column: 1 / -1;
