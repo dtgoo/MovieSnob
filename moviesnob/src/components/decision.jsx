@@ -35,7 +35,7 @@ function DecisionData(props) {
     return (
       <div>
         <div className="decision-score">Your MovieSnob Score: {betterAvg} <br/></div>
-        Not a movie snob! You don't care what critics say, you like what you like. The Oscars?? those are just your two cousins that were named the same for some reason. You're really into comedies like Austin Powers and WaterBoy. You're there opening weekend for every new Fast and Furious and you wouldn't have it any other way. <br/>
+        Not a movie snob! You don't care what critics say, you like what you like. The Oscars?? those are just your two cousins that were given the same name for some reason. You're really into comedies like Austin Powers and WaterBoy. You're there opening weekend for every new Fast and Furious and you wouldn't have it any other way. <br/>
         <img alt="decision"className="decision-img" src="https://media4.giphy.com/media/3o7bu1iM5MSwG2y7NS/giphy.gif"/>
       </div>
     )
